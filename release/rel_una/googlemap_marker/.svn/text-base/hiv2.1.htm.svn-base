@@ -1,0 +1,69 @@
+<html>
+<head>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', 'TweetPosts#'],      
+['Jakarta '	,96],
+['Bandung	 '	,40],
+['Semarang '	,35],
+['Surabaya '	,28],
+['Yogyakarta '	,24],
+['Bali'	,20],
+['Malang'	,17],
+['Makassar'	,16],
+['Padang'	,15],
+['Pontianak'	,15],
+['Medan'	,13],
+['Tangerang'	,10],
+['Samarinda'	,9],
+['Bogor'	,9],
+['South Sulawesi	'	,8],
+['Palembang'	,7],
+['Bekasi'	,7],
+['Depok'	,5],
+['CentralJava'	,3],
+['Lampung'	,3],
+['Batam'	,2],
+['Banjarmasin'	,2],
+['Solo'	,2],
+['Papua'	,1],
+['Riau'	,1],
+['Aceh'	,1],
+['East Java '	,1],
+['Sumatra Selatan	'	,1],
+['Cilegon '	,1],
+['Nunukan'	,1]
+
+  
+        ]);
+
+      var options = {};
+       options['region'] = 'ID';
+      options['colors'] = [0x00CC00, 0xFFFF00, 0xFF0000]; //orange colors
+      options['dataMode'] = 'markers';
+      //options['dataMode'] = 'regions';
+      options['width'] = '800px';
+      options['height'] = '450px';
+      options['showLegend'] = true;
+      
+
+      var container = document.getElementById('map_canvas');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+    };
+
+  </script>
+</head>
+
+
+<body>
+<P>Twitter Map Indonesian City Level Distribution for HIV/AIDS Topic at random event (16 Oct 2013)</P>
+    <div id='map_canvas'></div>
+</body>
+
+</html>

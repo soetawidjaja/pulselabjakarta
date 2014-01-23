@@ -1,0 +1,71 @@
+<html>
+<head>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', 'TweetPosts#'],
+ ['Aceh						', 3  ],
+['Ambon						', 2  ],
+['Bali						', 8  ],
+['Balikpapan			', 3  ],
+['Bandung					', 26 ],
+['Banjarmasin			', 11 ],
+['Batam						', 6  ],
+['Bekasi					', 8  ],
+['Bogor						', 7  ],
+ ['Depok						', 7  ],
+['Flores					', 1  ],
+['Jakarta					', 99 ],
+['Jambi						', 3  ],
+['Lampung					', 2  ],
+['Makassar				', 14 ],
+['Malang					', 1  ],
+['Medan						', 15 ],
+['Padang					', 6  ],
+['Palembang				', 6  ],
+['Pontianak				', 2  ],
+['Riau						', 1  ],
+['Samarinda				', 3  ],
+['Semarang				', 9  ],
+['Serang					', 1  ],
+['Sidoarjo				', 1  ],
+['Solo', 2  ],
+['Sukoharjo				', 1  ],
+['Sumatra Selatan	', 1  ],
+['Surabaya				', 8  ],
+['Tangerang				', 6  ],
+['Tanggerang			', 1  ],
+['Yogyakarta			', 37 ] 
+
+  
+        ]);
+
+      var options = {};
+       options['region'] = 'ID';
+      options['colors'] = [0x00CC00, 0xFFFF00, 0xFF0000]; //orange colors
+      options['dataMode'] = 'markers';
+      //options['dataMode'] = 'regions';
+      options['width'] = '800px';
+      options['height'] = '450px';
+      options['showLegend'] = true;
+      
+
+      var container = document.getElementById('map_canvas');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+    };
+
+  </script>
+</head>
+
+
+<body>
+<P>Twitter Map Indonesian City Level Distribution for Condoms Topic at AIDS Day (1st Dec 2013)</P>
+    <div id='map_canvas'></div>
+</body>
+
+</html>
